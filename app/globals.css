@@ -1,0 +1,57 @@
+body{
+ margin:0;
+ background:#090909;
+ color:#f7f0df;
+ font-family:Arial,sans-serif;
+}
+nav{
+ display:flex;
+ justify-content:space-between;
+ padding:30px 8%;
+ border-bottom:1px solid #333;
+}
+.hero{
+ text-align:center;
+ padding:120px 20px;
+ background:linear-gradient(#111,#000);
+}
+h1{
+ font-size:64px;
+ letter-spacing:4px;
+}
+button{
+ background:#c9a45c;
+ border:0;
+ padding:14px 30px;
+ cursor:pointer;
+}
+section{
+ padding:60px 8%;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:25px;
+}
+.card{
+ background:#151515;
+ padding:35px;
+ border:1px solid #333;
+}
+.story{
+ text-align:center;
+}
+.chat{
+ position:fixed;
+ right:25px;
+ bottom:25px;
+ background:#c9a45c;
+ color:#111;
+ padding:15px 20px;
+ border-radius:30px;
+}
+@media(max-width:700px){
+ .grid{grid-template-columns:1fr}
+ h1{font-size:40px}
+ nav{display:block}
+}
