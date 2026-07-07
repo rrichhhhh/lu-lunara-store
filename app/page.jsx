@@ -1,314 +1,168 @@
-export default function Home(){
+export default function Home() {
+  const products = [
+    {
+      name: "Luna Heritage Watch",
+      type: "Swiss Automatic Timepiece",
+      image:
+        "https://images.unsplash.com/photo-1524805444758-089113d48a6d"
+    },
+    {
+      name: "Aurora Signature Bag",
+      type: "Italian Leather Collection",
+      image:
+        "https://images.unsplash.com/photo-1584917865442-de89df76afd3"
+    },
+    {
+      name: "Royal Moon Collection",
+      type: "Private Luxury Edition",
+      image:
+        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa"
+    }
+  ];
 
-const products=[
-{
-name:"Luna Heritage Watch",
-price:"$8,900",
-desc:"Swiss automatic movement crafted with timeless precision."
-},
-{
-name:"Aurora Signature Bag",
-price:"$6,500",
-desc:"Italian leather masterpiece with refined details."
-},
-{
-name:"Royal Moon Collection",
-price:"Private Edition",
-desc:"Exclusive creations reserved for collectors."
-}
-]
+  return (
+    <main className="luxury-page">
 
+      <nav className="luxury-nav">
 
-return(
+        <div className="brand">
+          LU LUNARA
+        </div>
 
-<main>
+        <div className="nav-links">
+          <span>Watches</span>
+          <span>Bags</span>
+          <span>Collections</span>
+          <span>Heritage</span>
+          <span>Contact</span>
+        </div>
 
+      </nav>
 
-{/* NAV */}
 
-<nav>
+      <section className="hero">
 
-<div className="logo">
-LU LUNARA
-</div>
+        <div className="hero-content">
 
+          <p className="eyebrow">
+            ESTABLISHED 2026 · LUXURY ATELIER
+          </p>
 
-<div className="links">
 
-<a>Watches</a>
-<a>Bags</a>
-<a>Collections</a>
-<a>Heritage</a>
+          <h1>
+            Luxury
+            <br />
+            Beyond Time
+          </h1>
 
-</div>
 
+          <p className="subtitle">
+            Exceptional watches and leather creations
+            crafted for timeless elegance.
+          </p>
 
-<div className="actions">
 
-<span>Search</span>
-<span>Account</span>
-<span>Bag (0)</span>
+          <button>
+            Explore Collection
+          </button>
 
-</div>
 
+        </div>
 
-</nav>
+      </section>
 
 
 
-{/* HERO */}
+      <section className="collection">
 
+        <div className="section-title">
 
-<section className="hero">
+          <p>
+            FEATURED COLLECTION
+          </p>
 
+          <h2>
+            Signature Pieces
+          </h2>
 
-<div className="hero-light"></div>
+        </div>
 
 
-<div className="hero-content">
+        <div className="products">
 
+          {products.map((item,index)=>(
 
-<p className="eyebrow">
-ESTABLISHED 2026 · PRIVATE LUXURY ATELIER
-</p>
+            <div className="card" key={index}>
 
+              <div
+                className="image"
+                style={{
+                  backgroundImage:`url(${item.image})`
+                }}
+              />
 
-<h1>
+              <div className="info">
 
-Luxury
-<br/>
-Beyond Time
+                <h3>
+                  {item.name}
+                </h3>
 
-</h1>
+                <p>
+                  {item.type}
+                </p>
 
 
-<p className="subtitle">
+                <span>
+                  Discover →
+                </span>
 
-Exceptional watches and leather creations
-crafted for timeless elegance.
+              </div>
 
-</p>
+            </div>
 
+          ))}
 
-<button>
-Explore Collection
-</button>
+        </div>
 
 
-</div>
+      </section>
 
 
 
-<div className="hero-product">
+      <section className="heritage">
 
+        <p>
+          THE LUNARA PHILOSOPHY
+        </p>
 
-<div className="watch-glass">
+        <h2>
+          Crafted For Generations
+        </h2>
 
+        <div className="line"></div>
 
-<div className="watch">
+        <span>
+          A pursuit of precision, beauty and
+          enduring craftsmanship.
+        </span>
 
-</div>
+      </section>
 
 
-</div>
 
+      <footer>
 
-</div>
+        <div>
+          LU LUNARA
+        </div>
 
+        <p>
+          Luxury watches · Leather creations · Timeless design
+        </p>
 
+      </footer>
 
-</section>
 
-
-
-
-
-{/* FEATURED */}
-
-
-
-<section className="collection">
-
-
-<p className="section-label">
-FEATURED COLLECTION
-</p>
-
-
-<h2>
-Signature Pieces
-</h2>
-
-
-
-<div className="cards">
-
-
-{
-products.map((item,index)=>(
-
-
-<div className="card" key={index}>
-
-
-<div className="product-image">
-
-</div>
-
-
-<div className="product-info">
-
-<h3>
-{item.name}
-</h3>
-
-
-<p>
-{item.desc}
-</p>
-
-
-<strong>
-{item.price}
-</strong>
-
-
-<a>
-View Product →
-</a>
-
-
-</div>
-
-
-</div>
-
-
-))
-}
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-{/* HERITAGE */}
-
-
-<section className="heritage">
-
-
-<div>
-
-
-<p className="section-label">
-OUR HERITAGE
-</p>
-
-
-<h2>
-Born from precision.
-<br/>
-Defined by elegance.
-</h2>
-
-
-<p>
-
-Every LU LUNARA creation combines
-Swiss craftsmanship,
-Italian leather artistry,
-and timeless design philosophy.
-
-</p>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-{/* CRAFT */}
-
-
-<section className="craft">
-
-
-<div className="craft-box">
-
-
-<h2>
-Craftsmanship
-</h2>
-
-
-<p>
-
-Hundreds of hours of refinement.
-Every detail engineered for generations.
-
-</p>
-
-
-</div>
-
-
-<div className="craft-box">
-
-
-<h2>
-Private Client
-</h2>
-
-
-<p>
-
-Exclusive collections created
-for collectors worldwide.
-
-</p>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<footer>
-
-
-<div className="logo">
-LU LUNARA
-</div>
-
-
-<p>
-Luxury Beyond Time
-</p>
-
-
-</footer>
-
-
-
-</main>
-
-)
-
+    </main>
+  );
 }
