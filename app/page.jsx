@@ -2,34 +2,34 @@ export default function Home() {
   const products = [
     {
       name: "Luna Heritage Watch",
-      desc: "Swiss inspired precision timepiece",
+      desc: "Swiss inspired luxury timepiece"
     },
     {
       name: "Aurora Signature Bag",
-      desc: "Italian leather luxury collection",
+      desc: "Italian leather masterpiece"
     },
     {
       name: "Royal Moon Collection",
-      desc: "Private luxury selection",
-    },
+      desc: "Private luxury selection"
+    }
   ];
 
   return (
     <main>
-      <nav>
-        <div className="logo">LU LUNARA</div>
 
-        <div className="menu">
+      <nav>
+        <b>LU LUNARA</b>
+        <span>
           Watches　 Bags　 Collections　 Heritage　 Contact
-        </div>
+        </span>
       </nav>
+
 
       <section className="hero">
         <h1>Luxury Beyond Time</h1>
-
         <p>
-          Timeless watches and signature leather collections
-          crafted for extraordinary moments.
+          Exceptional watches and leather creations
+          crafted for timeless elegance.
         </p>
 
         <button>
@@ -38,22 +38,21 @@ export default function Home() {
       </section>
 
 
-      <section className="collection">
-
+      <section>
         <h2>Featured Collection</h2>
 
         <div className="grid">
 
-          {products.map((item) => (
-            <div className="card" key={item.name}>
+          {products.map((p)=>(
+            <div className="card" key={p.name}>
 
               <div className="image">
-                LU LUNARA
+                LUNARA
               </div>
 
-              <h3>{item.name}</h3>
+              <h3>{p.name}</h3>
 
-              <p>{item.desc}</p>
+              <p>{p.desc}</p>
 
               <button>
                 View Details
@@ -69,19 +68,17 @@ export default function Home() {
 
       <section className="heritage">
 
-        <h2>Our Heritage</h2>
+        <h2>
+          Our Heritage
+        </h2>
 
         <p>
-          Every LU LUNARA creation represents elegance,
-          craftsmanship and timeless luxury.
+          Designed for collectors who appreciate
+          craftsmanship, rarity and timeless beauty.
         </p>
 
       </section>
 
-
-      <footer>
-        © 2026 LU LUNARA Luxury House
-      </footer>
 
     </main>
   );
