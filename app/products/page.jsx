@@ -1,94 +1,76 @@
+import {products} from "@/data/products";
+
+
 export default function Products(){
 
 
-const items=[
+return (
 
-{
-name:"Luna Heritage Watch",
-price:"$8,900",
-category:"Watches"
-},
-
-{
-name:"Aurora Signature Bag",
-price:"$6,500",
-category:"Bags"
-},
-
-{
-name:"Royal Moon Watch",
-price:"$12,000",
-category:"Limited Edition"
-}
+<main>
 
 
-]
-
-
-return(
-
-<main className="products-page">
+<section className="products">
 
 
 <h1>
-Private Collection
+Collections
 </h1>
 
 
-<p>
-Exceptional creations crafted for collectors.
-</p>
 
-
-
-<div className="product-grid">
+<div className="grid">
 
 
 {
-items.map((item,index)=>(
+products.map((item)=>(
 
 
-<div className="product-card" key={index}>
+<div className="card" key={item.id}>
 
 
-<div className="product-photo">
+<img
+src={item.image}
+/>
 
-</div>
 
 
 <h2>
-{item.name}
+
+{item.name.en}
+
 </h2>
 
 
 <p>
-{item.category}
+
+${item.price.toLocaleString()}
+
 </p>
 
 
-<strong>
-{item.price}
-</strong>
-
-
 <button>
-View Detail
+
+View Details
+
 </button>
+
 
 
 </div>
 
 
 ))
-}
 
+}
 
 
 </div>
 
 
-</main>
+</section>
 
+
+</main>
 
 )
 
