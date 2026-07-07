@@ -13,10 +13,11 @@ desc:"Italian leather masterpiece with refined details."
 name:"Royal Moon Collection",
 desc:"Private luxury collection for exclusive clients."
 }
-];
+]
 
 
 return (
+
 <main>
 
 <nav>
@@ -25,11 +26,7 @@ LU LUNARA
 </div>
 
 <div className="menu">
-<span>Watches</span>
-<span>Bags</span>
-<span>Collections</span>
-<span>Heritage</span>
-<span>Contact</span>
+Watches　 Bags　 Collections　 Heritage　 Contact
 </div>
 </nav>
 
@@ -44,9 +41,11 @@ Luxury Beyond Time
 Exceptional watches and leather creations crafted for timeless elegance.
 </p>
 
+
 <button>
 Explore Collection
 </button>
+
 
 </section>
 
@@ -59,7 +58,8 @@ Featured Collection
 </h2>
 
 
-<div className="grid">
+<div className="cards">
+
 
 {
 products.map((item,index)=>(
@@ -70,7 +70,6 @@ products.map((item,index)=>(
 LUNARA
 </div>
 
-
 <h3>
 {item.name}
 </h3>
@@ -79,11 +78,9 @@ LUNARA
 {item.desc}
 </p>
 
-
 <button>
 View Details
 </button>
-
 
 </div>
 
@@ -93,25 +90,26 @@ View Details
 
 </div>
 
-
 </section>
 
 
 
-<section className="story">
+<section className="heritage">
 
 <h2>
 Our Heritage
 </h2>
 
 <p>
-A modern luxury house inspired by precision, craftsmanship and timeless design.
+A modern luxury house inspired by precision,
+craftsmanship and timeless design.
 </p>
 
 </section>
 
 
 </main>
+
 )
 
 }
