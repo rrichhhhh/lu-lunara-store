@@ -3,17 +3,17 @@ export default function Home(){
 const products=[
 {
 name:"Luna Heritage Watch",
-desc:"Swiss automatic movement crafted for timeless elegance.",
-image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d"
+desc:"Swiss automatic movement. Crafted for generations.",
+image:"https://images.unsplash.com/photo-1523170335258-f5ed11844a49"
 },
 {
 name:"Aurora Signature Bag",
-desc:"Italian leather masterpiece with refined details.",
+desc:"Italian leather masterpiece.",
 image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3"
 },
 {
 name:"Royal Moon Collection",
-desc:"Private luxury collection for exclusive clients.",
+desc:"Private collection for collectors.",
 image:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa"
 }
 ]
@@ -21,7 +21,7 @@ image:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa"
 
 return(
 
-<main>
+<div className="site">
 
 
 <nav>
@@ -30,91 +30,89 @@ return(
 LU LUNARA
 </div>
 
-
-<div>
-<a>Watches</a>
-<a>Bags</a>
-<a>Collections</a>
-<a>Heritage</a>
-<a>Contact</a>
+<div className="links">
+<span>Watches</span>
+<span>Bags</span>
+<span>Collections</span>
+<span>Heritage</span>
+<span>Contact</span>
 </div>
-
 
 </nav>
 
 
 
-<div className="hero">
+<section className="hero">
+
+<div className="glow"></div>
 
 
-<div>
+<div className="heroText">
+
+<p className="small">
+ESTABLISHED 2026 · LUXURY MAISON
+</p>
 
 
 <h1>
-Luxury Beyond Time
+Luxury
+<br/>
+Beyond Time
 </h1>
 
 
 <p>
-Exceptional watches and leather creations crafted for timeless elegance.
+Exceptional watches and leather creations
+crafted for timeless elegance.
 </p>
 
 
 <button>
-Explore Collection
+EXPLORE COLLECTION
 </button>
 
 
 </div>
 
 
-
-</div>
-
+</section>
 
 
 
-<section>
+<section className="collection">
+
 
 <h2>
 Featured Collection
 </h2>
 
 
-
-<div className="product-grid">
+<div className="cards">
 
 
 {
-products.map((p,i)=>(
+products.map((item,index)=>(
 
-<div className="product-card" key={i}>
+<div className="card" key={index}>
 
+<img src={item.image}/>
 
-<img src={p.image}/>
-
+<div className="cardInfo">
 
 <h3>
-{p.name}
+{item.name}
 </h3>
 
-
 <p>
-{p.desc}
+{item.desc}
 </p>
-
-
-<button>
-View Details
-</button>
-
 
 </div>
 
+</div>
 
 ))
 }
-
 
 
 </div>
@@ -127,21 +125,32 @@ View Details
 
 <section className="heritage">
 
+<div>
 
 <h2>
-Our Heritage
+The Art Of Heritage
 </h2>
 
-
 <p>
-A modern luxury house inspired by precision, craftsmanship and timeless design.
+Every creation represents precision,
+craftsmanship and timeless luxury.
 </p>
 
+</div>
 
 </section>
 
 
-</main>
+
+<footer>
+
+LU LUNARA © 2026
+
+</footer>
+
+
+</div>
+
 
 )
 
