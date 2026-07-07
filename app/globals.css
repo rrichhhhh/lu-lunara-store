@@ -3,25 +3,26 @@ box-sizing:border-box;
 }
 
 
+html{
+scroll-behavior:smooth;
+}
+
+
 body{
 
 margin:0;
 
-background:
-radial-gradient(
-circle at top,
-#252525,
-#050505 45%
-);
+background:#050505;
 
 color:#f5f5f5;
 
 font-family:
 "Helvetica Neue",
+Helvetica,
 Arial,
 sans-serif;
 
-letter-spacing:.03em;
+letter-spacing:.04em;
 
 }
 
@@ -29,13 +30,15 @@ letter-spacing:.03em;
 
 main{
 
-min-height:100vh;
+overflow:hidden;
 
 }
 
 
+/* =====================
+NAV
+===================== */
 
-/* NAV */
 
 nav{
 
@@ -52,8 +55,16 @@ padding:0 90px;
 border-bottom:
 1px solid rgba(255,255,255,.08);
 
+background:
+
+rgba(5,5,5,.65);
+
 backdrop-filter:
-blur(20px);
+blur(25px);
+
+position:relative;
+
+z-index:10;
 
 }
 
@@ -63,9 +74,9 @@ blur(20px);
 
 font-size:24px;
 
-font-weight:500;
+letter-spacing:9px;
 
-letter-spacing:8px;
+font-weight:500;
 
 }
 
@@ -87,57 +98,86 @@ font-size:14px;
 
 color:#ddd;
 
+cursor:pointer;
+
 }
 
 
 
-/* HERO */
+.links a:hover{
+
+color:#d5b354;
+
+}
+
+
+
+.actions{
+
+display:flex;
+
+gap:25px;
+
+font-size:12px;
+
+color:#aaa;
+
+}
+
+
+
+/* =====================
+HERO
+===================== */
 
 
 .hero{
 
-height:850px;
-
-position:relative;
-
-overflow:hidden;
+height:900px;
 
 display:flex;
 
 align-items:center;
 
-padding-left:130px;
+padding:0 110px;
+
+position:relative;
 
 }
 
 
 
-.glow{
+.hero-light{
 
 position:absolute;
 
-width:700px;
+width:800px;
 
-height:700px;
+height:800px;
+
+right:-150px;
+
+top:50px;
+
 
 background:
+
 radial-gradient(
 circle,
-rgba(210,170,60,.18),
+rgba(212,170,60,.25),
 transparent 65%
 );
 
-right:100px;
 
-top:100px;
-
-filter:blur(40px);
+filter:blur(60px);
 
 }
 
 
 
 .hero-content{
+
+width:55%;
 
 position:relative;
 
@@ -147,15 +187,15 @@ z-index:2;
 
 
 
-.small{
+.eyebrow{
 
-font-size:12px;
+font-size:11px;
 
-letter-spacing:6px;
+letter-spacing:8px;
 
-color:#bda75b;
+color:#c7a64b;
 
-margin-bottom:50px;
+margin-bottom:55px;
 
 }
 
@@ -163,13 +203,13 @@ margin-bottom:50px;
 
 h1{
 
-font-size:96px;
+font-size:110px;
 
-line-height:1.05;
+line-height:1;
 
-font-weight:400;
+font-weight:300;
 
-letter-spacing:-3px;
+letter-spacing:-5px;
 
 margin:0 0 40px;
 
@@ -183,9 +223,9 @@ font-size:22px;
 
 line-height:2;
 
-max-width:600px;
+max-width:560px;
 
-color:#bcbcbc;
+color:#aaa;
 
 }
 
@@ -195,55 +235,201 @@ button{
 
 margin-top:50px;
 
+padding:20px 55px;
+
+border:0;
+
+
 background:
+
 linear-gradient(
 135deg,
-#d8b44a,
-#9b7420
+#e2bf55,
+#987321
 );
 
-border:none;
 
-padding:
+font-size:13px;
 
-20px 55px;
+letter-spacing:4px;
 
-font-size:15px;
-
-letter-spacing:3px;
+cursor:pointer;
 
 }
 
 
 
-/* COLLECTION */
+button:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+
+
+/* =====================
+PRODUCT VISUAL
+===================== */
+
+
+.hero-product{
+
+width:45%;
+
+height:600px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+
+.watch-glass{
+
+
+width:420px;
+
+height:520px;
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.15),
+rgba(255,255,255,.03)
+);
+
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+
+backdrop-filter:
+
+blur(25px);
+
+
+box-shadow:
+
+0 40px 120px rgba(0,0,0,.8);
+
+
+position:relative;
+
+
+animation:
+
+float 6s ease-in-out infinite;
+
+
+}
+
+
+
+.watch{
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+
+left:100px;
+
+top:120px;
+
+
+background:
+
+radial-gradient(
+circle,
+#d6b24d,
+#111 55%
+);
+
+
+box-shadow:
+
+0 0 80px rgba(210,170,50,.5);
+
+
+}
+
+
+
+@keyframes float{
+
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+
+}
+
+
+
+
+
+/* =====================
+COLLECTION
+===================== */
 
 
 .collection{
 
 padding:
 
-100px 90px;
+140px 90px;
 
 }
 
 
 
-.section-title{
+.section-label{
+
+font-size:12px;
 
 letter-spacing:8px;
 
-font-size:13px;
+color:#c7a64b;
 
-color:#c7aa55;
+}
+
+
+
+h2{
+
+font-size:55px;
+
+font-weight:300;
+
+letter-spacing:-2px;
 
 }
 
 
 
 .cards{
-
-margin-top:50px;
 
 display:grid;
 
@@ -252,15 +438,14 @@ repeat(3,1fr);
 
 gap:35px;
 
+margin-top:70px;
+
 }
 
 
 
 .card{
 
-height:430px;
-
-padding:35px;
 
 background:
 
@@ -269,15 +454,19 @@ rgba(255,255,255,.04);
 
 border:
 
-1px solid rgba(255,255,255,.08);
+1px solid rgba(255,255,255,.1);
 
 
 backdrop-filter:
 
-blur(20px);
+blur(25px);
 
 
-transition:.4s;
+transition:.5s;
+
+
+overflow:hidden;
+
 
 }
 
@@ -286,37 +475,48 @@ transition:.4s;
 .card:hover{
 
 transform:
-translateY(-10px);
 
-background:
+translateY(-15px);
 
-rgba(255,255,255,.08);
+
+border-color:
+
+rgba(220,180,70,.5);
 
 }
 
 
 
-.image{
+.product-image{
 
-height:220px;
+
+height:330px;
+
 
 background:
 
 linear-gradient(
 135deg,
 #222,
-#080808
+#050505
 );
 
-margin-bottom:30px;
 
 }
 
 
 
-.card h3{
+.product-info{
 
-font-size:22px;
+padding:35px;
+
+}
+
+
+
+.product-info h3{
+
+font-size:25px;
 
 font-weight:400;
 
@@ -324,12 +524,158 @@ font-weight:400;
 
 
 
-.card p{
+.product-info p{
 
 color:#999;
 
 line-height:1.8;
 
-font-size:14px;
+}
+
+
+
+.product-info strong{
+
+display:block;
+
+margin:25px 0;
+
+font-size:18px;
+
+color:#d6b24d;
+
+}
+
+
+
+.product-info a{
+
+color:white;
+
+font-size:13px;
+
+letter-spacing:3px;
+
+}
+
+
+
+/* =====================
+HERITAGE
+===================== */
+
+
+.heritage{
+
+padding:
+
+160px 120px;
+
+
+background:
+
+linear-gradient(
+90deg,
+#080808,
+#111
+);
+
+}
+
+
+
+.heritage p{
+
+max-width:600px;
+
+font-size:20px;
+
+line-height:2;
+
+color:#aaa;
+
+}
+
+
+
+/* =====================
+CRAFT
+===================== */
+
+
+.craft{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+padding:
+
+100px;
+
+}
+
+
+
+.craft-box{
+
+
+padding:70px;
+
+
+background:
+
+rgba(255,255,255,.04);
+
+
+border:
+
+1px solid rgba(255,255,255,.1);
+
+
+backdrop-filter:
+
+blur(20px);
+
+
+}
+
+
+
+.craft-box p{
+
+color:#aaa;
+
+line-height:2;
+
+}
+
+
+
+/* =====================
+FOOTER
+===================== */
+
+
+footer{
+
+padding:
+
+80px;
+
+border-top:
+
+1px solid rgba(255,255,255,.1);
+
+text-align:center;
+
+}
+
+
+footer p{
+
+color:#777;
 
 }
